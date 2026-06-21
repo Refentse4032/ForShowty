@@ -1,14 +1,165 @@
+/* --- Global Body Defaults --- */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: lightblue;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+    background-color: rgb(230, 126, 237);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center boxes horizontally */
+    justify-content: center; /* Center boxes vertically */
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+
+.bg-index {
+  background-image:url(myPhotos/IMG_0591.JPG) ;
+}
+
+.bg-page2 {
+    background-image: url('myPhotos/OIP.webp');
+}
+
+.bg-page3 {
+    background-image: url(myPhotos/IMG_0580.JPG);
+}
+
+.bg-page4 {
+    background-image: url(myPhotos/IMG_0641.JPG);
+}
+
+/* --- Global Typography Standards --- */
 h1 {
-    color: darkblue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 20px;
+h3 {
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    color: rgb(90, 0, 130);
+    margin-bottom: 15px;
+}
+
+/* --- The Main Card Box Wrapper --- */
+.card-box {
+    width: 90%;
+    max-width: 400px;
+    padding: 35px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly frosted white for high readability */
+    border: 2px solid rgb(161, 0, 215);
+    border-radius: 20px;
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* --- Unique Element Styling inside index.html Box --- */
+.subtitle-text {
+    font-size: 20px;
+    font-style: italic;
+    color: #444;
+}
+
+.nickname-text {
+    font-size: 26px;
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    color: rgb(161, 0, 215);
+    margin: 15px 0;
+}
+
+/* --- Unique Element Styling inside page2.html Box --- */
+.love-message {
+    font-size: 24px;
+    font-family: 'Georgia', serif;
+    color: #111;
+    font-weight: bold;
+}
+
+/* --- Unified Button Component --- */
+button.action-btn {
+    display: inline-block;
+    cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(161, 0, 215);
+    border: 2px solid brown;
+    border-radius: 8px;
+    padding: 12px 40px;
+    margin-top: 20px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button.action-btn:hover {
+    transform: scale(1.05);
+    background-color: rgb(130, 0, 180);
+}/* Specific Background for Page 5 */
+.bg-page5 {
+    /* Add a background picture path here if you want one */
+}
+
+/* Make the box wider to easily hold images */
+.gallery-card {
+    max-width: 500px;
+}
+
+/* Arrange the photos neatly inside the box */
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap; /* Allows images to drop to the next line smoothly on small screens */
+}
+
+/* Style the pictures so they look like polaroids */
+.secret-pic {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; /* Keeps the photos from stretching unnaturally */
+    border: 4px solid white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Make the image pop slightly when hovered over */
+.secret-pic:hover {
+    transform: scale(1.1) rotate(2deg);
+    border-color: rgb(161, 0, 215);
+}
+
+/* The dynamic text revealing block style */
+.hidden-message-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(161, 0, 215, 0.1);
+    border-left: 4px solid rgb(161, 0, 215);
+    border-radius: 6px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#message-text {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    color: #222;
+    line-height: 1.5;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Soft transition animation for revealing the note */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
